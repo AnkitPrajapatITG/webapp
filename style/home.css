@@ -1,0 +1,119 @@
+      /* Reset */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background: #f9fafb;
+          color: #111;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          transition: background 0.3s, color 0.3s;
+      }
+
+      body.dark {
+          background: #111827;
+          color: #f9fafb;
+      }
+
+      /* Navbar */
+      .navbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px 24px;
+          background: #2563eb;
+          color: #fff;
+      }
+
+      .navbar .logo {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 20px;
+          font-weight: bold;
+      }
+
+      .navbar .logo img {
+          width: 32px;
+          height: 32px;
+      }
+
+      .navbar .search-bar {
+          flex: 1;
+          margin: 0 20px;
+          display: flex;
+      }
+
+      .navbar .search-bar input {
+          flex: 1;
+          padding: 6px 12px;
+          border-radius: 6px 0 0 6px;
+          border: none;
+          outline: none;
+      }
+
+      .navbar .search-bar button {
+          padding: 6px 12px;
+          border: none;
+          border-radius: 0 6px 6px 0;
+          background: #1d4ed8;
+          color: white;
+          cursor: pointer;
+      }
+
+      .navbar .actions {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+      }
+
+      .navbar select {
+          padding: 6px;
+          border-radius: 6px;
+          border: none;
+      }
+
+      .toggle-mode {
+          cursor: pointer;
+          padding: 6px 10px;
+          border-radius: 6px;
+          background: #1d4ed8;
+      }
+
+      .user-icon {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #2563eb;
+          font-weight: bold;
+      }
+
+      /* Main content placeholder */
+      .content {
+          flex: 1;
+          padding: 40px 20px;
+          text-align: center;
+      }
+
+      /* Footer */
+      footer {
+          background: #1f2937;
+          color: #9ca3af;
+          text-align: center;
+          padding: 20px;
+      }
+
+      footer a {
+          color: #9ca3af;
+          text-decoration: none;
+          margin: 0 10px;
+      }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <link rel="stylesheet" href="../style/home.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../assets/ewlLogo.png" height="100px" width="100px" alt="Logo">
+            MyWebsite
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>🔍</button>
+        </div>
+
+        <div class="actions">
+            <select>
+                <option>Categories</option>
+                <option>Tech</option>
+                <option>Design</option>
+                <option>Business</option>
+            </select>
+            <div class="toggle-mode" id="modeToggle">🌙</div>
+            <div class="user-icon">U</div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="content">
+        <h1>Welcome to MyWebsite</h1>
+        <p>This is your homepage layout with a navbar and footer.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MyWebsite — All rights reserved.</p>
+        <div>
+            <a href="#">About</a> |
+            <a href="#">Contact</a> |
+            <a href="#">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="../utils/notification.js"></script>
+    <script type="module" src="../js/home.js">
+
+    </script>
+</body>
+
+</html>
