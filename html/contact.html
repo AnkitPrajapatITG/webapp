@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0ea5a4;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        button {
+            background: #0ea5a4;
+            color: #fff;
+            border: none;
+            margin-top: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #0c8b8a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+
+            <button type="submit">Send</button>
+        </form>
+        <p id="response" style="margin-top:16px; font-size:14px; color:green;"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById("contactForm");
+        const responseEl = document.getElementById("response");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById("name").value,
+                message: document.getElementById("message").value,
+                email: document.getElementById("email").value
+            };
+
+            try {
+                const res = await fetch("http://localhost:4000/api/v1/Auth/sendMail", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await res.text();
+                responseEl.textContent = `✅ ${data}`;
+            } catch (err) {
+                responseEl.textContent = "❌ Something went wrong!";
+            }
+        });
+    </script>
+</body>
+
+</html>
